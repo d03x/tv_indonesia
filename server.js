@@ -1,11 +1,18 @@
-import express from "express";
-import channelsDataList from "./stream_list.json" assert {type:"json"}
+import bodyParser from "body-parser";
+import { info, log } from "console";
+import express, { response } from "express";
+
 let port = process.env.PORT || 5000;
 
+let stream_lists = path.resolve(__dirname,"stream_list.json");
+
+
 import fetch from "node-fetch";
+import path from "path";
 async function getChanel(name) {
   try {
-    if (channelsDataList.default) {
+    let chanels = await import(stream_lists);
+    if (chanels.default) {
       return chanels.default.filter((e) => {
         return e.chanel == name;
       })[0];
@@ -18,7 +25,7 @@ async function getChanel(name) {
 const app = express();
 
 app.get("/channels", async (req, res) => {
-  const data = channelsDataList;
+  const data = await import(stream_lists);
   if (data.default) {
     let chan = data.default.map((dat) => {
       return {
