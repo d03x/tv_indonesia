@@ -1,87 +1,66 @@
-import bodyParser from "body-parser";
-import { info, log } from "console";
-import express, { response } from "express";
-
-let port = process.env.PORT || 5000;
-
-let stream_lists = path.resolve(join("stream_list.json"))
-console.log(stream_lists);
-
-
+import express from "express";
+import fs from "fs";
+import path from "path";
 import fetch from "node-fetch";
-import path, { join } from "path";
-async function getChanel(name) {
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+// Ambil path file JSON
+const streamListPath = path.resolve("stream_list.json");
+
+// Fungsi untuk membaca JSON
+function getStreamList() {
   try {
-    let chanels = await import(stream_lists);
-    if (chanels.default) {
-      return chanels.default.filter((e) => {
-        return e.chanel == name;
-      })[0];
-    }
+    const jsonData = fs.readFileSync(streamListPath, "utf-8");
+    return JSON.parse(jsonData);
   } catch (error) {
-    console.log(error.message);
+    console.error("Error membaca stream_list.json:", error.message);
+    return [];
   }
 }
 
-const app = express();
-
-app.get("/channels", async (req, res) => {
-  const data = await import(stream_lists);
-  if (data.default) {
-    let chan = data.default.map((dat) => {
-      return {
-        name: dat.name,
-        channel: dat.chanel,
-      };
-    });
-    res.json(chan);
-  }
+app.get("/channels", (req, res) => {
+  const data = getStreamList();
+  const channels = data.map((dat) => ({
+    name: dat.name,
+    channel: dat.chanel,
+  }));
+  res.json(channels);
 });
 
 app.get("/stream/:chanel/:stream_data?", async (req, res) => {
-  let params = req.params;
-  let server_url;
-  let stream_data = params.stream_data ?? null;
-  let channel = params.chanel ?? null;
+  const { chanel, stream_data } = req.params;
+  const data = getStreamList();
+  const channelData = data.find((e) => e.chanel === chanel);
 
-  if (!channel) {
-    res.status(501);
-    res.json({
-      status: 5092,
-      message: "Stream data tidak ada",
-    });
-  }
-
-  let channelData = await getChanel(channel);
   if (!channelData) {
-    res.status(501);
-    res.json({
-      status: 5092,
-      message: "Stream data tidak ada",
+    return res.status(404).json({ status: 404, message: "Channel tidak ditemukan" });
+  }
+
+  let server_url = channelData.provider_url + (stream_data || channelData.stream);
+
+  try {
+    const response = await fetch(server_url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        Referer: channelData.referer,
+        Origin: channelData.origin,
+      },
     });
-  }
-  server_url = channelData.provider_url + channelData.stream;
 
-  if (stream_data) {
-    server_url = channelData.provider_url + stream_data;
+    res.contentType(response.headers.get("Content-Type"));
+    res.set("Access-Control-Allow-Origin", "*");
+    res.status(response.status);
+    response.body.pipe(res);
+  } catch (error) {
+    res.status(500).json({ status: 500, message: "Gagal mengambil stream", error: error.message });
   }
-
-  let response = await fetch(server_url, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-      Referer: channelData.referer,
-      Origin: channelData.origin,
-    },
-  });
-  res.contentType(response.headers.get("Content-Type"));
-  res.set("Access-Control-Allow-Origin", "*");
-  res.status(response.status);
-  response.body.pipe(res);
 });
 
 app.listen(port, () => {
-  info("Listen localhost:50000");
+  console.log(`Server berjalan di http://localhost:${port}`);
 });
 
 export default app;
