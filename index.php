@@ -3,7 +3,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var video = document.getElementById("video");
-        var videoSrc = "http://localhost:5000/stream/trans_7/";
+        var videoSrc = "https://tv-indonesia-8w6s.vercel.app/stream/trans_7/";
 
         if (Hls.isSupported()) {
             var hls = new Hls();

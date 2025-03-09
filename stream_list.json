@@ -37,15 +37,15 @@
     "chanel": "gtv",
     "referer": "https://gtv-linier.rctiplus.id",
     "origin": "https://gtv-linier.rctiplus.id",
-    "provider_url": "https://gtv-linier.rctiplus.id/hdntl=exp=1741545193~acl=%2F*~data=hdntl~hmac=2d145c46a2010ca996ead96d31df6bcf865a89656a34126cf1f3ea56a53e962c/",
+    "provider_url": "https://gtv-linier.rctiplus.id/hdntl=exp=1741571206~acl=%2F*~data=hdntl~hmac=2cf1a8ba511157b3719e3f907b1519596940603807389d91fc7b4ce8e0f422c2/",
     "name": "GTV",
     "stream": "gtv-sdi-avc1_210000=11-mp4a_96000=1.m3u8"
   },
   {
     "chanel": "rcti",
-    "referer": "https://gtv-linier.rctiplus.id",
-    "origin": "https://gtv-linier.rctiplus.id",
-    "provider_url": "https://rcti-linier.rctiplus.id/hdntl=exp=1741544892~acl=%2F*~data=hdntl~hmac=59d6d37b6f61baa810585ddb655551f9e3f9bd6337516ec21fdcbdac41bd9142/",
+    "referer": "https://rcti-linier.rctiplus.id",
+    "origin": "https://rcti-linier.rctiplus.id",
+    "provider_url": "https://rcti-linier.rctiplus.id/hdntl=exp=1741570455~acl=%2F*~data=hdntl~hmac=c09a59f9ab27e403511550038aa5435e0b410aa40a8b42a884bb4d1102c9bb6d/",
     "name": "RCTI",
     "stream": "rcti-sdi-avc1_210000=10-mp4a_96000=1.m3u8"
   },
