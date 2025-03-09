@@ -1,0 +1,9 @@
+{
+	"type": "module",
+	"dependencies": {
+		"body-parser": "^1.20.3",
+		"cors-anywhere": "^0.4.4",
+		"express": "^4.21.2",
+		"node-fetch": "^3.3.2"
+	}
+}

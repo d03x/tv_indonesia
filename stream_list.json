@@ -1,0 +1,84 @@
+[
+  {
+    "chanel": "trans_7",
+    "referer": "https://video.detik.com",
+    "origin": "https://video.detik.com",
+    "provider_url": "https://video.detik.com/trans7/smil:trans7.smil/",
+    "name": "Trans 7",
+    "stream": "chunklist_w2048828985_b744100_sleng.m3u8"
+  },
+  {
+    "chanel": "trans_tv",
+    "referer": "https://video.detik.com",
+    "origin": "https://video.detik.com",
+    "provider_url": "https://video.detik.com/transtv/smil:transtv.smil/",
+    "name": "Trans TV",
+    "hls_key": "transtv/smil:transtv.smil",
+    "stream": "chunklist_w1338818644_b744100_sleng.m3u8"
+  },
+  {
+    "chanel": "cnn_tv",
+    "referer": "https://live.cnnindonesia.com",
+    "origin": "https://live.cnnindonesia.com",
+    "provider_url": "https://live.cnnindonesia.com/livecnn/smil:cnntv.smil/",
+    "name": "CNN",
+    "hls_key": "livecnn/smil:cnntv.smil/",
+    "stream": "chunklist_w423796468_b384000_sleng.m3u8"
+  },
+  {
+    "chanel": "cbnc_tv",
+    "referer": "https://live.cnbcindonesia.com",
+    "origin": "https://live.cnbcindonesia.com",
+    "provider_url": "https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/",
+    "name": "CNN",
+    "stream": "chunklist_w584819236_b384000_sleng.m3u8"
+  },
+  {
+    "chanel": "gtv",
+    "referer": "https://gtv-linier.rctiplus.id",
+    "origin": "https://gtv-linier.rctiplus.id",
+    "provider_url": "https://gtv-linier.rctiplus.id/hdntl=exp=1741545193~acl=%2F*~data=hdntl~hmac=2d145c46a2010ca996ead96d31df6bcf865a89656a34126cf1f3ea56a53e962c/",
+    "name": "GTV",
+    "stream": "gtv-sdi-avc1_210000=11-mp4a_96000=1.m3u8"
+  },
+  {
+    "chanel": "rcti",
+    "referer": "https://gtv-linier.rctiplus.id",
+    "origin": "https://gtv-linier.rctiplus.id",
+    "provider_url": "https://rcti-linier.rctiplus.id/hdntl=exp=1741544892~acl=%2F*~data=hdntl~hmac=59d6d37b6f61baa810585ddb655551f9e3f9bd6337516ec21fdcbdac41bd9142/",
+    "name": "RCTI",
+    "stream": "rcti-sdi-avc1_210000=10-mp4a_96000=1.m3u8"
+  },
+  {
+    "chanel": "mnc_tv",
+    "referer": "https://mnctv-linier.rctiplus.id",
+    "origin": "https://mnctv-linier.rctiplus.id",
+    "provider_url": "https://mnctv-linier.rctiplus.id/hdntl=exp=1741545753~acl=%2F*~data=hdntl~hmac=99f4974dd2ccfbba6f8ebab08cf6e5749ce0b6f3eb9b14153a7053f796ae25e1/",
+    "name": "MNC",
+    "stream": "mnctv-sdi-avc1_210000=10-mp4a_96000=1.m3u8"
+  },
+  {
+    "chanel": "kesehatan_tv",
+    "referer": "https://5bf7b725107e5.streamlock.net",
+    "origin": "https://5bf7b725107e5.streamlock.net",
+    "provider_url": "https://5bf7b725107e5.streamlock.net/tvkesehatan/tvkesehatan/",
+    "name": "TV KESEHATAN",
+    "stream": "playlist.m3u8"
+  },
+  {
+    "chanel": "bandung_tv",
+    "referer": "http://202.150.153.254:65500",
+    "origin": "http://202.150.153.254:65500",
+    "provider_url": "http://202.150.153.254:65500/",
+    "name": "BANDUNG TV",
+    "stream": "bandungtvWEBSITE.m3u8"
+  },
+  {
+    "chanel": "korean_central_tv",
+    "referer": "https://tv.nknews.org",
+    "origin": "https://tv.nknews.org",
+    "provider_url": "https://tv.nknews.org/tvhls/",
+    "name": "Korean Central Television",
+    "stream": "stream.m3u8"
+  }
+]
