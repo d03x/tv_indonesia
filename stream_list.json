@@ -53,9 +53,9 @@
     "chanel": "mnc_tv",
     "referer": "https://mnctv-linier.rctiplus.id",
     "origin": "https://mnctv-linier.rctiplus.id",
-    "provider_url": "https://mnctv-linier.rctiplus.id/hdntl=exp=1741545753~acl=%2F*~data=hdntl~hmac=99f4974dd2ccfbba6f8ebab08cf6e5749ce0b6f3eb9b14153a7053f796ae25e1/",
+    "provider_url": "https://mnctv-linier.rctiplus.id/hdntl=exp=1741571464~acl=%2F*~data=hdntl~hmac=0e3e39bfaad2abc23b8c3486466cafd314c1e7bd9c714c32e58e391a6dd251f0/",
     "name": "MNC",
-    "stream": "mnctv-sdi-avc1_210000=10-mp4a_96000=1.m3u8"
+    "stream": "mnctv-sdi-avc1_600000=8-mp4a_96000=1.m3u8"
   },
   {
     "chanel": "kesehatan_tv",
