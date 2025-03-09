@@ -4,11 +4,12 @@ import express, { response } from "express";
 
 let port = process.env.PORT || 5000;
 
-let stream_lists = path.resolve(__dirname,"stream_list.json");
+let stream_lists = path.resolve(join("stream_list.json"))
+console.log(stream_lists);
 
 
 import fetch from "node-fetch";
-import path from "path";
+import path, { join } from "path";
 async function getChanel(name) {
   try {
     let chanels = await import(stream_lists);
