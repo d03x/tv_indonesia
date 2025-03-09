@@ -1,6 +1,9 @@
 import bodyParser from "body-parser";
 import { info, log } from "console";
 import express, { response } from "express";
+
+let port = process.env.PORT || 5000;
+
 import fetch from "node-fetch";
 async function getChanel(name) {
   try {
@@ -72,7 +75,7 @@ app.get("/stream/:chanel/:stream_data?", async (req, res) => {
   response.body.pipe(res);
 });
 
-app.listen(5000, () => {
+app.listen(port, () => {
   info("Listen localhost:50000");
 });
 
