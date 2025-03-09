@@ -3,7 +3,6 @@
     "builds": [
       { "src": "server.js", "use": "@vercel/node" }
     ],
-    "includeFiles": ["stream_list.json"],
     "routes": [
       { "src": "/(.*)", "dest": "server.js" }
     ]
